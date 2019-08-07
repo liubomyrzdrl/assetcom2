@@ -24,8 +24,7 @@
     "react-scripts": "3.0.1",
     "recharts": "^1.6.2"
   },
-  "scripts": {
- 
+  "scripts": { 
     "start": "node index.js",
     "build": "webpack",
     "test": "react-scripts test",
