@@ -13,7 +13,7 @@ const port = process.env.PORT || 8080;
  
 //mongodb://heroku_bj485v87:5vkut35cr4iks2bp11ln8jnpja@ds133476.mlab.com:33476/heroku_bj485v87
 mongoose.Promise = global.Promise
-mongoose.connect("mongodb://heroku_bj485v87:5vkut35cr4iks2bp11ln8jnpja@ds133476.mlab.com:33476/heroku_bj485v87")
+mongoose.connect("mongodb:<company>:<company2>@ds133476.mlab.com:33476/heroku_bj485v87")
 mongoose.connection.on('error', () => {
   throw new Error("unable to connect to database")
 })
