@@ -11,10 +11,10 @@ import path from 'path'
 const app = express();
 const port = process.env.PORT || 8080;
 //"mongodb://share:share2@ds133476.mlab.com:33476/heroku_bj485v87"
- //config.mongoUri
+ //config.mongoUri mongodb://heroku_bj485v87:5vkut35cr4iks2bp11ln8jnpja@ds133476.mlab.com:33476/heroku_bj485v87
 // Connection URL
 mongoose.Promise = global.Promise
-mongoose.connect("mongodb://company:comapany2@ds133476.mlab.com:33476/heroku_bj485v87")
+mongoose.connect("mongodb://heroku_bj485v87:5vkut35cr4iks2bp11ln8jnpja@ds133476.mlab.com:33476/heroku_bj485v87")
 mongoose.connection.on('error', () => {
   throw new Error("unable to connect to database")
 })
