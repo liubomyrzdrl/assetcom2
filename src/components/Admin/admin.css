@@ -1,0 +1,20 @@
+.admin-block{
+    display:flex;
+    flex-direction: column;
+    padding-left: 35px;
+}
+
+ .stat-blockinf{
+     padding-left: 10px;
+ }      
+
+.admin-secs_block{
+    display:flex;
+}
+.manag-block{
+    display: flex;
+   
+}
+.manag-block_cont{
+     position: relative;
+}
