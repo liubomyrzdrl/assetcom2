@@ -1,8 +1,6 @@
 import React,{useContext} from 'react';
- import { makeStyles } from '@material-ui/core/styles';
- 
+import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
- 
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon'; 
 import { Switch } from '@material-ui/core';
@@ -173,7 +171,7 @@ const useStyles = makeStyles(theme => ({
          
         <Icon className={clsx(classes.icon, 'fa fa-plus-circle')} color="action"  onClick={handleClickOpen} />
         <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-          <DialogTitle id="form-dialog-title">Додати нового користуваяа</DialogTitle>
+          <DialogTitle id="form-dialog-title">Додати нового користувача</DialogTitle>
           <DialogContent>
                        
            <form className={classes.container} noValidate autoComplete="off">
