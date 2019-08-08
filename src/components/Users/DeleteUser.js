@@ -40,11 +40,10 @@ const useStyles = makeStyles(theme => ({
   const DeleteUser=(props)=>{
     const{usdata,dispatch}=  useContext(UserContext);
     const [open, setOpen] = React.useState(false);
-    const [values, setValues] = React.useState({
+    // const [values, setValues] = React.useState({
         
-      });
+    //   });
      
-     console.log("DELEEETTE"+props.id);
          
     const classes = useStyles();
   
@@ -86,9 +85,7 @@ const useStyles = makeStyles(theme => ({
     }
   
     // //second 
-      
-    //second 
-    
+   
     try{
          
         const response = await fetch("/api/users");
@@ -108,7 +105,7 @@ const useStyles = makeStyles(theme => ({
       <DeleteIcon className={classes.icon} onClick={handleClickOpen}/>
          
         <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-          <DialogTitle id="form-dialog-title"> Видалити користуваяа</DialogTitle>
+          <DialogTitle id="form-dialog-title"> Видалити користувача</DialogTitle>
           <DialogContent>
           
           

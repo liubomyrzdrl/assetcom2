@@ -14,65 +14,20 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
 
-const useStyles = makeStyles(theme => ({
-
-    container: {
-      display: 'flex',
-      flexWrap: 'wrap',
-    },
-    button: {
-      margin: theme.spacing(1),
-    },
-    root: {
-      padding: theme.spacing(3, 2),
-    },
-    textField: {
-      marginLeft: theme.spacing(1),
-      marginRight: theme.spacing(1),
-    },
-    dense: {
-      marginTop: theme.spacing(2),
-    },
-    menu: {
-      width: 200,
-    },
-  }));
-
  const PayrollIncomeCompany=(props)=> {
    const [open, setOpen] = React.useState(false);
-    const [values, setValues] = React.useState({
+   const [values, setValues] = React.useState({
         updateStatistic:true,
        });
 
-    const classes = useStyles();
+     const {cstate,dispatch}=useContext(CompanyContext);
+     const{ststate,stdispath }=  useContext(StatisticContext);
 
-    const {cstate,dispatch}=useContext(CompanyContext);
-    const{usdata}    =           useContext(UserContext);
-    const{ststate,stdispath }=  useContext(StatisticContext);
-console.log("ddddd STatic "+props.salary);
-const countSalary =(()=>{
-    let count=0;
-    for(let i in usdata){
-      console.log("couddsfsdfsd"+Number(usdata[i].user_income)+1);
-         count= Number(count)+Number(usdata[i].user_income);
-    }
-   return count
-})();
-console.log("couddsfsdfsd"+countSalary);
     
 const updateStat =()=>{
 
  setValues({updateStatistic: !values.updateStatistic});
 }
-    const handleCostAsssets = costassets => event => {
-      setValues({ ...values, [costassets]: event.target.value });
-    };
-    for(let i  in props){
- console.log("props"+ props[i]);
-    }
-    
-    
-
     function handleClickOpen() {
       setOpen(true);
     }
@@ -90,7 +45,7 @@ const onSaveChanges=()=>{
     //first
     const settingsC = {
       method: 'PUT',
-      body: JSON.stringify({'income': (cstate.income -props.salary+3000).toFixed(2) }),
+      body: JSON.stringify({'income': (cstate.income-props.salary+3000).toFixed(2) }),
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
@@ -137,9 +92,6 @@ console.log("Error"+err);
 
 })()
 
-
- 
-
 }
     return (
       <div>
@@ -154,7 +106,7 @@ console.log("Error"+err);
           <DialogContent>    
                    
           <DialogContentText>Дохід команії </DialogContentText>  <DialogContentText style={{color:'red'}}>{Number(cstate.income)+3000}</DialogContentText>              
-          <DialogContentText>   Видатки  команії на заробітну плану працівникам  </DialogContentText> <DialogContentText style={{color:'red'}}>{props.salary}</DialogContentText>   
+          <DialogContentText>   Видатки  команії на заробітну плану працівникам  </DialogContentText> <DialogContentText style={{color:'red'}}>{Number(props.salary)}</DialogContentText>   
           </DialogContent>
           
           <DialogActions>

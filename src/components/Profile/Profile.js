@@ -2,48 +2,18 @@ import React, { Component, useState,useEffect,useContext } from 'react'
 import ProfileItem from './ProfileItem';
 import { AuthContext } from '../../contexts/AutnContext';
 import { UserContext } from '../../contexts/UserContext';
-import BuyAssets from './AssetsTrade/BuyAssets';
+import BuyAssets from './AssetsTrade/BuySellAssets';
 import './prof.sass' 
 import Paper from '@material-ui/core/Paper';
-import SellAssets from './AssetsTrade/SellAssets';
-import './prof.sass'
+ 
+import './prof.sass';
+import PropTypes from 'prop-types'; 
  
 
 const Profile = () => {
-
-// const[prstate, setProf]= useState([]);
-// const[profstate, setProfState]= useState({
-//   first_name:'',
-//   last_name:' ',
-//   salary: '',
-//   assets_pack:''||0,
   
-// });
 const {austate} = useContext(AuthContext);
 const {usdata} = useContext(UserContext);
-  // useEffect( () => {     
-         
-  //   const fetchData=async ()=> {
-         
-         
-  //    // You can await here
-  //    try{
-        
-  //    const response = await fetch(`/api/users/${austate.id}`);
-  //    const data = await response.json();
-  //    console.log("Stat as"+ data);
-  //    //  stdispatch({type:"GET_STAT_DATA", payload: data})
-  //    setProf(data);
-  //    }catch(err){
-  //        console.log(err);
-  //    }
-  //  }
-  //    fetchData();
-     
-  // },[])
-
-
-
 const empl =usdata.filter((item,key)=>{
   return item._id ===austate.id
 });
@@ -86,7 +56,7 @@ for(let i in empl){
                  
                  <div className="comer-block">
                       <BuyAssets className="comer-block_a"  assets_pack={assets_pack} id={austate.id} salary={salary} />
-                      <SellAssets className="comer-block_s" assets_pack={assets_pack} id={austate.id} salary={salary}/>
+                   
                 </div>
         </div>
      )
@@ -94,6 +64,12 @@ for(let i in empl){
  }
  
 
+ Profile.propTypes = { 
+   
+  assets_pack: PropTypes.number, 
+  salary:      PropTypes.number
+
+} 
  
  
 

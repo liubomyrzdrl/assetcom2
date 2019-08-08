@@ -1,7 +1,6 @@
 import React,{useContext} from 'react';
 import DeleteUser from './DeleteUser';
 import { makeStyles } from '@material-ui/core/styles';
-// import './user.sass';
 import './user.css';
 import { UserContext } from '../../contexts/UserContext';
 import DeleteIcon from '@material-ui/icons/Delete';

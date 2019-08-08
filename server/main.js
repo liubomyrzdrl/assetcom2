@@ -9,9 +9,10 @@ import staticRouter from './routes/statrouter';
 import path from 'path'
  
 const app = express();
-const port = process.env.PORT || 8080;
- 
-//mongodb://heroku_bj485v87:5vkut35cr4iks2bp11ln8jnpja@ds133476.mlab.com:33476/heroku_bj485v87
+const port = process.env.PORT || 5000;
+ //config.mongoUri
+//"mongodb://user:user1234@ds133476.mlab.com:33476/heroku_bj485v87"
+//
 mongoose.Promise = global.Promise
 mongoose.connect("mongodb://user:user1234@ds133476.mlab.com:33476/heroku_bj485v87")
 mongoose.connection.on('error', () => {

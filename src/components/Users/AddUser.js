@@ -1,7 +1,6 @@
 import React,{useContext} from 'react';
  import { makeStyles } from '@material-ui/core/styles';
- import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
+ 
 import TextField from '@material-ui/core/TextField';
  
 import Button from '@material-ui/core/Button';
@@ -90,15 +89,15 @@ const useStyles = makeStyles(theme => ({
       
       const handleChangeEmail = email => event => {
         setValues({ ...values, [email]: event.target.value });
+      
       };
 
       const handleChangePassword = password => event => {
         setValues({ ...values, [password]: event.target.value });
+        
       };  
     
-      const handleChangeAssetsPack = assets_pack => event => {
-        setValues({ ...values, [assets_pack]: event.target.value });
-      };  
+
       const handleChangeSalary = salary => event => {
         setValues({ ...values, [salary]: event.target.value });
       };  
@@ -131,7 +130,7 @@ const useStyles = makeStyles(theme => ({
             password:  values.password,
             role:values.role,
             salary:values.salary,
-            assets_pack: values.assets_pack
+            assets_pack: 0
     
           }),
           headers: {
@@ -166,6 +165,8 @@ const useStyles = makeStyles(theme => ({
       
     
       })()
+         setValues(  values.first_name= " ", values.last_name= " ",values.email="",values.password==="");
+         setOpen(false);
 }
     return (
       <div className="add_block">
@@ -210,14 +211,7 @@ const useStyles = makeStyles(theme => ({
                           />  
 
 
-            <TextField
-                          id="assets_pack"
-                          label="Пакет акцій"
-                          className={classes.textField}
-                          value={0}
-                          onChange={handleChangeAssetsPack('assets_pack')}
-                          margin="normal"
-                      />   
+           
                       
               <TextField
                       id="salary"
@@ -242,7 +236,7 @@ const useStyles = makeStyles(theme => ({
                       ))}
                     </TextField>     
 
-                       <TextField
+                    <TextField
                       id="role"
                       select
                       label=" "
@@ -273,7 +267,7 @@ const useStyles = makeStyles(theme => ({
             <Button onClick={handleClose} color="primary">
               Вийти
             </Button>
-            <Button  disabled={values.first_name===''||values.last_name===''|| values.email===''|| values.password===''||values.assets_pack===""}  onClick={onSaveChanges} color="primary">
+            <Button  disabled={values.first_name===''||values.last_name===''|| values.email===''|| values.password===''||values.role===''|| values.salary===''}  onClick={onSaveChanges} color="primary">
               Зберегти
             </Button>
           </DialogActions>
@@ -283,3 +277,5 @@ const useStyles = makeStyles(theme => ({
   }
 
 export default AddUser 
+
+ 

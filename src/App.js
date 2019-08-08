@@ -4,7 +4,7 @@ import {Switch,Route,} from 'react-router-dom'
 import HomeCompanyPage from './components/HomeCompanyPage/HomeCompanyPage';
 import Menu from './components/Menu/Menu';
 import AllUsers from './components/Users/AllUsers';
-import UserDetails from './components/Users/UserDetails';
+ 
 import { AuthContext } from './contexts/AutnContext';
 import {UserContext} from './contexts/UserContext';
 
@@ -13,13 +13,12 @@ import PrivateRoute from './components/PrivateRouter/PrivateLoginRouter';
 import Login from './components/Login/Login';
 import Admin from './components/Admin/Admin';
 import Footer from './components/Footer/Footer';
-import Statistic from './components/Admin/Statistic/Statistic';
-import Managment from './components/Admin/Managment/Managment';
+
  
 
 const App =()=>{
   const {austate} = useContext(AuthContext);
-  const {usdata} = useContext(UserContext);
+ // const {usdata} = useContext(UserContext);
 
   return (
     <div className="App">
@@ -27,7 +26,7 @@ const App =()=>{
          <Switch>
                 <Route  path="/" exact     component={HomeCompanyPage}/>
                 {austate.isAutentificated &&    <Route  path="/users"      component={AllUsers}/>}
-                <Route  path="/usersdetails/:id" render={props=> <UserDetails {...props}/>}/> />
+          
                 
               
                 {austate.isAutentificated ? <Route path="/profile" component={Profile}/> : <Route  path="/" exact  render={props=> <HomeCompanyPage isLoading ={true}/> }/>}

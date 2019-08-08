@@ -22,7 +22,7 @@ const createUser = async (req,res)=>{
     try{
        const data = await  Users.create(req.body);
        console.log(data);
-      res.send(data)
+      res.send("Created User"+data)
      }catch(err){
      console.log("Error"+err);
        }
@@ -42,7 +42,7 @@ const createUser = async (req,res)=>{
 //update  by id
 const updateUserByid =async (req,res)=>{
     try{
-       const data = await  Users.findByIdAndUpdate({_id:req.params.id},req.body);
+       const data = await  Users.findByIdAndUpdate({_id:req.params.id});
        console.log(data);
       
       return res.json(data)
@@ -54,13 +54,12 @@ const updateUserByid =async (req,res)=>{
   const updateAssetUserByid =async (req,res)=>{
     try{
        const data = await  Users.findOne({_id:req.params.id});
-    
-      
+       
         
-     console.log(req.body.salary);
+       console.log("DATA"+data);
        data.salary= req.body.salary;
        data.assets_pack= req.body.assets_pack;
-       
+   
        data.save(err=>{
            if(err){
             console.log("err"+err);
@@ -70,7 +69,7 @@ const updateUserByid =async (req,res)=>{
        });
        console.log(data);
       
-      return res.json(data)
+      return res.json("updateAssetUserByid"+data)
      }catch(err){
      console.log("Error"+err);
        }

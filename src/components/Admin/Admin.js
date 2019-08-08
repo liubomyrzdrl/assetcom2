@@ -1,9 +1,6 @@
 import React from 'react';
-import { Link} from 'react-router-dom';
 import Statistic from './Statistic/Statistic';
 import Managment from './Managment/Managment'; 
-import CompanyStatistic from './Statistic/CompanyStatistic';
-import User_Statistic from './Statistic/UserStatistic';
 import './admin.css';
  
 
@@ -30,4 +27,3 @@ const  Admin=()=> {
     )
 } 
 export default Admin
-//  <Statistic/>

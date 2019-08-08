@@ -13,7 +13,7 @@ import img from '../../image/market-share-468x258.jpg';
         <div className="homepage-cont">
          <h1>Home page</h1>
          <div className="image">
-         <img src={img}/>
+           <img src={img}/>
          </div>
     
            
@@ -22,8 +22,3 @@ import img from '../../image/market-share-468x258.jpg';
 }
 export default HomeCompanyPage
 
-// <div>
-//                 <div>{cstate.income}</div>
-//                  <div>{cstate.costassets}</div>
-//                  <div>{cstate.month_income}</div>
-//           </div>

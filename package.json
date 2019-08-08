@@ -25,8 +25,7 @@
     "recharts": "^1.6.2"
   },
   "scripts": {
-    
-    "start": "node index.js",
+    "start": "react-scripts start",
     "build": "webpack",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -34,6 +33,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "proxy":"http://localhost:5000",
   "browserslist": {
     "production": [
       ">0.2%",

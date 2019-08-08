@@ -12,6 +12,7 @@ const  Managment=()=> {
       const{cstate }= useContext(CompanyContext);
       const{usdata }= useContext(UserContext);
       console.log(usdata);
+      
       let salary=0;
     for(let i in usdata) {
       salary=salary+usdata[i].salary;

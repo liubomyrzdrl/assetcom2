@@ -23,7 +23,7 @@ const CompanyContextProvider = (props) => {
         
      },[])
    
-  console.log(cstate);
+//  console.log(cstate);
       
   return (
         <div>

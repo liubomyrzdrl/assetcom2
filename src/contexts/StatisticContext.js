@@ -7,7 +7,7 @@ const StatisticContextProvider = (props) => {
    const[ststate, stdispath] =  useReducer(statisticReducer ,[]);
 
  
-console.log("Статист контекст"+ststate);
+//console.log("Статист контекст"+ststate);
    useEffect(() => {
     fetch('/api/stat')
       .then(res=>{
@@ -18,7 +18,7 @@ console.log("Статист контекст"+ststate);
              })
        
   },[]);
-  console.log("StatisticContextProvider"+ ststate);
+//  console.log("StatisticContextProvider"+ ststate);
     return (
         <div>
             <StatisticContext.Provider value={{ststate, stdispath}}>
