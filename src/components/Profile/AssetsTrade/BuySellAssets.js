@@ -65,8 +65,8 @@ const{ustate,dispatch}= useContext(UserContext);
   
      try{
   const cdata= await fetch(`/api/users/asses/${props.id}`,settingsC);
-  let cjdata =await cdata.json();
-  console.log("From PUt"+cjdata); 
+  //let cjdata =await cdata.json();
+ 
  
   setOpen(false);
   }catch(err){
@@ -81,10 +81,7 @@ const{ustate,dispatch}= useContext(UserContext);
       const response = await fetch("/api/users");
       const data = await response.json();
 
-      for(let i in data){
-         console.log("Users as"+ data[i].salary);
-      }
-     
+    
         dispatch({type:"UPDATE_DATA_USERS", payload: data})
      
       }catch(err){
@@ -119,7 +116,7 @@ function AddTo (){
  setState(Number(state))
   }else{
     setState(Number(state)+1)
-    console.log('Add To'+(valstatesalary+valueAssetsCompany).toFixed(4));
+ //   console.log('Add To'+(valstatesalary+valueAssetsCompany).toFixed(4));
     valState((valstatesalary+valueAssetsCompany)) 
   }
   

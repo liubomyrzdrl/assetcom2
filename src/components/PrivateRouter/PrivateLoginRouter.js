@@ -5,7 +5,7 @@ import { AuthContext } from '../../contexts/AutnContext';
 
  const  PrivateLoginRoute=({component: Component,...rest})=>{
      const{austate}=useContext(AuthContext);
-     console.log("isAutentificated"+austate.isAutentificated);
+
     return (
         <Route {...rest}
              render={props=>!austate.isAutentificated ?(<Component {...props}/>):(

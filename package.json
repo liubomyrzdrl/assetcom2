@@ -26,6 +26,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start-ser": "node index.js",
     "build": "react-scripts build",
  
     "test": "react-scripts test",

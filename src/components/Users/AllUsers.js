@@ -10,7 +10,7 @@ const AllUsers = () => {
   const{usdata}=  useContext(UserContext);
  const{austate}=  useContext(AuthContext);
  // const{edata,dispatch}=  useReducer(UserContext);
- console.log("EEdata"+usdata);
+ 
  const empl =usdata.map((item,key)=>{
       return <UserItem {...item}  key={key}/>
   });

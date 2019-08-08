@@ -11,14 +11,14 @@ import PropTypes from 'prop-types';
 const  Managment=()=> {
       const{cstate }= useContext(CompanyContext);
       const{usdata }= useContext(UserContext);
-      console.log(usdata);
+
       
       let salary=0;
     for(let i in usdata) {
       salary=salary+usdata[i].salary;
     }
 
-      console.log("SAAAAAKLLLLL"+salary);
+      
     return (
          
           <Paper className="manag-cont" >

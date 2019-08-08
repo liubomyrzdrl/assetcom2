@@ -22,7 +22,7 @@ const  AuthContextProvider =  (props) => {
 
    const getCredentionals=(email,password)=>{
     
-        console.log('austate'+austate.isAutentificated);  
+    //    console.log('austate'+austate.isAutentificated);  
  
       ( async function fetchData (){
              const settings = {
@@ -35,28 +35,24 @@ const  AuthContextProvider =  (props) => {
      };
  const data= await fetch("/api/auth",settings);
  let jdata =await data.json();
-  console.log("res status"+jdata.status) 
- console.log("res jdata"+jdata.message) 
+
  
       if(jdata.status==="err"){
    console.log("res message"+jdata.message) 
         setAuth({isAutentificated: false,message:jdata.message}); 
-                   console.log("res sdfg"+austate.message) 
+               //    console.log("res sdfg"+austate.message) 
 
-                   console.log("res austate"+austate.message) 
-
-       
+                 //  console.log("res austate"+austate.message) 
+   
           }else{
-              for(let i in jdata.data){
-                     console.log("jdata.data.id"+jdata.data[i]);
-              }
+            //   for(let i in jdata.data){
+            //       //   console.log("jdata.data.id"+jdata.data[i]);
+            //   }
    
            
       setAuth({isAutentificated: !austate.isAutentificated, id:jdata.data.id,role: jdata.data.role }); 
-      console.log("austate.id"+austate.id );
-   
-
-            }
+      //console.log("austate.id"+austate.id );
+              }
             
     })()
     
